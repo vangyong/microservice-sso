@@ -9,5 +9,7 @@ Authorization:
 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aGFuZ3NhbiIsImV4cCI6MTU1NTIzODAxOCwiaWF0IjoxNTU1MjM0NDE4fQ.0gg1cyo-6QMg6wzf87ZdNtPMQeI1pt8-t1Mqp50J9IY
 
 
+GET http://localhost:9999/test/server
+
 GET http://localhost:8080/test1
 

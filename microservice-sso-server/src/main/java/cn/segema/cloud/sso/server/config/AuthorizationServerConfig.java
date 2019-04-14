@@ -47,14 +47,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
          .withClient("client1")
          .secret(new BCryptPasswordEncoder().encode("12345"))
          .authorizedGrantTypes("authorization_code", "refresh_token")
-//         .redirectUris("http://sso-taobao:8083/client1")
+         .redirectUris("http://localhost:8080/")
          .scopes("all","read","write")
          .autoApprove(true)
          .and()
          .withClient("client2")
          .secret(new BCryptPasswordEncoder().encode("12345"))
          .authorizedGrantTypes("authorization_code", "refresh_token")
-//         .redirectUris("http://sso-tmall:8084/client2")
+         .redirectUris("http://localhostl:8081/")
          .scopes("all","read","write")
          .autoApprove(true);
         
