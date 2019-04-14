@@ -36,7 +36,7 @@ public class JwtRefreshSuccessHandler implements AuthenticationSuccessHandler{
             String newToken = myUserDetailsService.saveUserToken(((UserDetails)authentication.getPrincipal()).getUsername());
             response.setHeader("Authorization", newToken);
         }else {
-        	 String userToken = myUserDetailsService.saveUserToken(((UserDetails)authentication.getPrincipal()).getUsername());
+        	 String userToken = myUserDetailsService.getUserToken(((UserDetails)authentication.getPrincipal()).getUsername());
         	response.setHeader("Authorization", userToken);
         }	
 	}
