@@ -47,7 +47,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
          .withClient("client1")
          .secret(new BCryptPasswordEncoder().encode("12345"))
          .authorizedGrantTypes("authorization_code", "refresh_token")
-         .redirectUris("http://localhost:8080/")
+         .redirectUris("http://localhost:8080/test1")
          .scopes("all","read","write")
          .autoApprove(true)
          .and()
