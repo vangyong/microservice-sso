@@ -14,7 +14,7 @@
 
 	<parent>
 		<groupId>cn.segema.cloud</groupId>
-		<artifactId>wemall-springcloud</artifactId>
+		<artifactId>wemall-sso</artifactId>
 		<version>${parent-version}</version>
 	</parent>
 

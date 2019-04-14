@@ -5,6 +5,6 @@ Built-By: wangyong
 Implementation-Vendor-Id: cn.segema.cloud
 Build-Jdk: 1.8.0_152
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/wemall-springcloud/microservice-sso-server
+ ot-starter-parent/wemall-sso/microservice-sso-server
 Created-By: Maven Integration for Eclipse
 
