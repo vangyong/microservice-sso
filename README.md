@@ -6,5 +6,8 @@ POST http://localhost:9999/login
 {"username":"zhangsan","password":"123456"}
 
 Authorization:
-eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aGFuZ3NhbiIsImV4cCI6MTU1NTIzNzAzNywiaWF0IjoxNTU1MjMzNDM3fQ.ud_4RDIoa1asg89bwcXiGFVE4By3zwRdEDcODU1YKLA
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6aGFuZ3NhbiIsImV4cCI6MTU1NTIzODAxOCwiaWF0IjoxNTU1MjM0NDE4fQ.0gg1cyo-6QMg6wzf87ZdNtPMQeI1pt8-t1Mqp50J9IY
+
+
+GET http://localhost:8080/test1
 
