@@ -1,0 +1,51 @@
+server:
+  port: 9999
+#  servlet:
+##    context-path: /sso-server
+#    session:
+#      timeout: 300
+spring: 
+  application:
+    name: microservice-sso-server
+  datasource:                       
+    url: jdbc:mysql://127.0.0.1:3306/wemall_springcloud?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false
+    driverClassName: com.mysql.jdbc.Driver
+    username: fengtuwei  
+    password: fengtuwei  
+# redis配置:    
+  redis: 
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: yeyeredisyeye
+    lettuce:
+      pool: 
+       max-active: 100
+       max-idle: 100
+       min-idle: 50
+       max-wait: 6000
+    timeout: 1000    
+  social: 
+    wechat:
+      app-id: [微信开放平台appId]
+      app-secret: [微信开放平台appSecret]
+    wechatmp: 
+      app-id: wx341e1ecdc00e388f
+      app-secret: 8d488da99b02d61899f76e3240328139   
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    cn.segema.cloud.sso.server: ERROR
+  file: /data/logs/wemall-springcloud/sso-server.log      
+       
+eureka: 
+  instance:
+    hostname: sso-server
+  client:
+    serviceUrl: 
+      defaultZone: http://localhost:8761/eureka/

@@ -1,0 +1,6 @@
+cn/segema/cloud/sso/client1/controller/TestController.class
+cn/segema/cloud/sso/client1/vo/TestUserVO.class
+cn/segema/cloud/sso/client1/domain/Member.class
+cn/segema/cloud/sso/client1/controller/MemberController.class
+cn/segema/cloud/sso/client1/config/Cient1SecurityConfig.class
+cn/segema/cloud/sso/client1/SsoClient1Application.class

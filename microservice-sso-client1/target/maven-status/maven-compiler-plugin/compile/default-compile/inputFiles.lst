@@ -1,0 +1,7 @@
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-sso-client1/src/main/java/cn/segema/cloud/sso/client1/config/Cient1SecurityConfig.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-sso-client1/src/main/java/cn/segema/cloud/sso/client1/domain/Member.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-sso-client1/src/main/java/cn/segema/cloud/sso/client1/vo/TestUserVO.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-sso-client1/src/main/java/cn/segema/cloud/sso/client1/config/ResourceServerConfig.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-sso-client1/src/main/java/cn/segema/cloud/sso/client1/controller/MemberController.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-sso-client1/src/main/java/cn/segema/cloud/sso/client1/controller/TestController.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-sso-client1/src/main/java/cn/segema/cloud/sso/client1/SsoClient1Application.java

@@ -1,0 +1,17 @@
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/utils/HttpUrlConnectionUtil.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/utils/AuthJsApiUtil.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/utils/IdGeneratorUtil.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/page/Pager.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/page/PagerParamVO.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/config/PropertiesConfig.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/utils/HttpClientUtil.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/utils/YmlUtil.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/config/MicroserviceProperties.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/utils/SnowflakeIdWorker.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/vo/ResultVO.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/constants/ApiConstant.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/utils/DateTimeUtil.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/constants/CommonConstant.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/MainTest.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/utils/PropertiesUtil.java
+/Users/wangyong/wemall/servers/wemall-springcloud/microservice-common/src/main/java/cn/segema/cloud/common/utils/QRCodeUtil.java
