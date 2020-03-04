@@ -5,7 +5,7 @@
  Source Server Type    : MySQL
  Source Server Version : 50720
  Source Host           : localhost
- Source Database       : wemall_springcloud
+ Source Database       : microservice-sso
 
  Target Server Type    : MySQL
  Target Server Version : 50720
