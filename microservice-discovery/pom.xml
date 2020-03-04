@@ -8,7 +8,7 @@
 
 	<parent>
 		<groupId>cn.segema.cloud</groupId>
-		<artifactId>wemall-sso</artifactId>
+		<artifactId>microservice-sso</artifactId>
 		<version>${parent-version}</version>
 	</parent>
 
