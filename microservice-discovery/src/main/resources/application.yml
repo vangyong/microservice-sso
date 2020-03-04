@@ -19,4 +19,4 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     cn.segema.cloud.discovery: ERROR
-  file: /data/logs/wemall-springcloud/discovery.log       
+  file: /data/logs/microservice-sso/discovery.log       
