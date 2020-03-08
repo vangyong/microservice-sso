@@ -1,17 +1,12 @@
 # maven ignore
-<<<<<<< HEAD
 target
 target/
 target/*
-=======
-target/
->>>>>>> ab3e214f4b611728bed256aac6727a4b112d111b
 *.jar
 *.war
 *.zip
 *.tar
 *.tar.gz
-<<<<<<< HEAD
 *.class
 
 # eclipse ignore
@@ -30,16 +25,6 @@ target/
 .idea/
 */target/
 */target/*
-=======
-
-# eclipse ignore
-.settings/
-.project
-.classpath
-
-# idea ignore
-.idea/
->>>>>>> ab3e214f4b611728bed256aac6727a4b112d111b
 *.ipr
 *.iml
 *.iws
@@ -53,7 +38,6 @@ target/
 
 # system ignore
 .DS_Store
-<<<<<<< HEAD
 *.DS_Store
 *.*.DS_Store
 */*.DS_Store
@@ -64,10 +48,3 @@ Thumbs.db
 # else
 .springBeans
 */.springBeans
-=======
-Thumbs.db
-
-# else
-.springBeans
-/.metadata/
->>>>>>> ab3e214f4b611728bed256aac6727a4b112d111b
