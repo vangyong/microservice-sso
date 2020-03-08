@@ -9,9 +9,9 @@ spring:
     name: microservice-sso-client2
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/wemall_springcloud?useUnicode=true&amp;characterEncoding=utf8
-    username: fengtuwei
-    password: fengtuwei
+    url: jdbc:mysql://127.0.0.1:3306/microservice-sso?useUnicode=true&amp;characterEncoding=utf8
+    username: root
+    password: root
 logging: 
   level:
     root: INFO

@@ -1,5 +1,5 @@
-cn/segema/cloud/sso/client2/vo/TestUserVO.class
-cn/segema/cloud/sso/client2/SsoClient2Application.class
-cn/segema/cloud/sso/client2/config/Client2SecurityConfig.class
-cn/segema/cloud/sso/client2/controller/TestController.class
-cn/segema/cloud/sso/client2/controller/CouponController.class
+cn\segema\cloud\sso\client2\controller\CouponController.class
+cn\segema\cloud\sso\client2\SsoClient2Application.class
+cn\segema\cloud\sso\client2\controller\TestController.class
+cn\segema\cloud\sso\client2\config\Client2SecurityConfig.class
+cn\segema\cloud\sso\client2\vo\TestUserVO.class
