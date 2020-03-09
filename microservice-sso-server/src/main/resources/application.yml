@@ -1,17 +1,18 @@
 server:
   port: 9999
-#  servlet:
-##    context-path: /sso-server
-#    session:
-#      timeout: 300
 spring: 
   application:
     name: microservice-sso-server
   datasource:                       
-    url: jdbc:mysql://127.0.0.1:3306/microservice_sso?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false
-    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/microservice_sso?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
     username: root  
     password: root  
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true  
 # redis配置:    
   redis: 
     database: 0
@@ -41,7 +42,7 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     cn.segema.cloud.sso.server: ERROR
-  file: /data/logs/wemall-springcloud/sso-server.log      
+  file: /data/logs/microservice-sso/sso-server.log      
        
 eureka: 
   instance:
