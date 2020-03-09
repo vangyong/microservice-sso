@@ -8,10 +8,10 @@ spring:
   application:
     name: microservice-sso-server
   datasource:                       
-    url: jdbc:mysql://127.0.0.1:3306/wemall_springcloud?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/microservice_sso?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false
     driverClassName: com.mysql.jdbc.Driver
-    username: fengtuwei  
-    password: fengtuwei  
+    username: root  
+    password: root  
 # redis配置:    
   redis: 
     database: 0

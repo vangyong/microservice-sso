@@ -77,7 +77,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Bean("jwtAuthenticationProvider")
     protected AuthenticationProvider jwtAuthenticationProvider() {
-        return new JwtAuthenticationProvider(myUserDetailsService());
+        return new JwtAuthenticationProvider(myUserDetailsService);
     }
 
     @Bean
@@ -85,24 +85,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean("myUserDetailsService")
-    protected MyUserDetailsService myUserDetailsService() {
-        return new MyUserDetailsService();
-    }
+//    @Bean("myUserDetailsService")
+//    protected MyUserDetailsService myUserDetailsService() {
+//        return new MyUserDetailsService();
+//    }
 
     @Bean
     protected TokenClearLogoutHandler tokenClearLogoutHandler() {
-        return new TokenClearLogoutHandler(myUserDetailsService());
+        return new TokenClearLogoutHandler(myUserDetailsService);
     }
     
     @Bean
     protected JsonLoginSuccessHandler jsonLoginSuccessHandler() {
-        return new JsonLoginSuccessHandler(myUserDetailsService());
+        return new JsonLoginSuccessHandler(myUserDetailsService);
     }
     
     @Bean
     protected JwtRefreshSuccessHandler jwtRefreshSuccessHandler() {
-        return new JwtRefreshSuccessHandler(myUserDetailsService());
+        return new JwtRefreshSuccessHandler(myUserDetailsService);
     }
 
     @Bean
