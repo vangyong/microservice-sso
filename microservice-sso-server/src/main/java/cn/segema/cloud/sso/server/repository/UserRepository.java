@@ -1,7 +1,5 @@
 package cn.segema.cloud.sso.server.repository;
 
-import java.math.BigInteger;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -9,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import cn.segema.cloud.sso.server.domain.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, BigInteger>{
+public interface UserRepository extends JpaRepository<User, String>{
 
 //    private RoleVO admin = new RoleVO("ADMIN", "管理员");
 //    private RoleVO developer = new RoleVO("DEVELOPER", "开发者");

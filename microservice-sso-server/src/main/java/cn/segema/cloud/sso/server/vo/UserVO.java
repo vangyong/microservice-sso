@@ -1,7 +1,6 @@
 package cn.segema.cloud.sso.server.vo;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.List;
 
 import io.swagger.annotations.ApiModel;
@@ -14,14 +13,14 @@ public class UserVO implements Serializable {
 
 	private static final long serialVersionUID = -228300848350217557L;
 
-	@ApiModelProperty(value = "id")
-	private BigInteger id;
+	@ApiModelProperty(value = "用户id")
+	private String userId;
 
 	@ApiModelProperty(value = "用户编号")
-	private String usercode;
+	private String userCode;
 
 	@ApiModelProperty(value = "用户名")
-	private String username;
+	private String userName;
 
 	@ApiModelProperty(value = "密码")
 	private String password;
@@ -32,8 +31,8 @@ public class UserVO implements Serializable {
 	@ApiModelProperty(value = "用户角色")
 	private List<RoleVO> roleList;
 
-	public UserVO(String username, String password) {
-		this.username = username;
+	public UserVO(String userName, String password) {
+		this.userName = userName;
 		this.password = password;
 	}
 }

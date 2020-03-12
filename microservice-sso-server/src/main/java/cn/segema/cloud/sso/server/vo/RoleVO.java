@@ -1,7 +1,6 @@
 package cn.segema.cloud.sso.server.vo;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.List;
 
 import io.swagger.annotations.ApiModel;
@@ -15,7 +14,7 @@ public class RoleVO implements Serializable {
 	private static final long serialVersionUID = 1960667607641277046L;
 
 	@ApiModelProperty(value = "公共参数")
-	private BigInteger roleId;
+	private String roleId;
 	
 	@ApiModelProperty(value = "角色编码")
 	private String roleCode;

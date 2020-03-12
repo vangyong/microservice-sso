@@ -88,7 +88,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency> -->
 
-		<!-- swagger2 因spring4all会导致页面错误不采用-->
+		<!-- swagger2 -->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>

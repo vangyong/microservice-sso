@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
     							resourceVO.setPid(resource.getParentId());
     							resourceVO.setUrl(resource.getResourceUrl());
     							resourceVO.setType(resource.getType());
-    							resourceVO.setSort(resource.getRank());
+    							resourceVO.setRank(resource.getRank());
     							resourceVOList.add(resourceVO);
     						}
     						roleVO.setResourceList(resourceVOList);

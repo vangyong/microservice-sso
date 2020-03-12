@@ -68,7 +68,7 @@ public class MyUserDetailsService implements UserDetailsService {
             }
         }
         // passwordEncoder.encode(sysUser.getPassword());
-        return new User(sysUser.getUsername(), sysUser.getPassword(), authorities);
+        return new User(sysUser.getUserName(), sysUser.getPassword(), authorities);
     }
 
     public String saveUserToken(String username) {

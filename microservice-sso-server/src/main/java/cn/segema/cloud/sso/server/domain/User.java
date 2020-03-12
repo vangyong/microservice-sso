@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
@@ -18,7 +19,7 @@ public class User implements Serializable {
 
 	@Id
 	@Column(name = "user_id")
-	private BigInteger userId;
+	private String userId;
 	
 	@Column(name = "user_name")
 	private String userName;
@@ -50,6 +51,7 @@ public class User implements Serializable {
 	@Column(name = "open_id")
 	private String openId;
 
+	@ApiModelProperty(value = "第三方类型(wechat:微信,qq:腾讯QQ,aliyay:支付宝)")
 	@Column(name = "third_party_type")
 	private String thirdPartyType;
 	

@@ -16,7 +16,7 @@ public class ResourceVO implements Serializable {
 	private static final long serialVersionUID = 2793561154882639434L;
 
 	@ApiModelProperty(value = "公共参数")
-	private BigInteger id;
+	private String id;
 
 	@ApiModelProperty(value = "资源名称")
     private String name;
@@ -25,16 +25,18 @@ public class ResourceVO implements Serializable {
     private String code;
 
 	@ApiModelProperty(value = "资源类型")
-    private Integer type;
+    private String type;
 
 	@ApiModelProperty(value = "资源URL")
     private String url;
+	
+	@ApiModelProperty(value="级别")
+	private String rank;
 
 	@ApiModelProperty(value = "排序号")
-    private BigInteger sort;
-
+    private Integer sortNumber;
 
 	@ApiModelProperty(value = "父菜单id")
-    private BigInteger pid;
+    private String pid;
 
 }

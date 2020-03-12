@@ -1,5 +1,5 @@
 # 项目简介
-本项目是springcloud单点登录服务,采用springboot-2.0.8,springcloud-Finchley.SR2版本
+本项目是springcloud单点登录服务,采用springboot-2.1.13,springcloud-Greenwich.SR5版本
 
 
 POST http://localhost:9999/login
