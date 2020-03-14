@@ -71,22 +71,34 @@
 			<version>3.4.0</version>
 		</dependency>
 		
-		<!-- <dependency> 
-				<groupId>org.springframework.cloud</groupId> 
-				<artifactId>spring-cloud-starter-security</artifactId> 
-			</dependency> -->
-			
-		<!-- spring-social-wechat -->	
+		<!-- spring-social -->
 		<!-- <dependency>
-            <groupId>com.ikasoa</groupId>
-            <artifactId>spring-social-wechat</artifactId>
-            <version>1.3.1</version>
-        </dependency>	
-        
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-config</artifactId>
+            <version>1.1.6.RELEASE</version>
+        </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-core</artifactId>
+            <version>1.1.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-security</artifactId>
+            <version>1.1.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-web</artifactId>
+            <version>1.1.6.RELEASE</version>
         </dependency> -->
+        
+        
+         <dependency>
+		    <groupId>commons-collections</groupId>
+		    <artifactId>commons-collections</artifactId>
+		    <version>3.2.2</version>
+		</dependency>
 
 		<!-- swagger2 -->
 		<dependency>

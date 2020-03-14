@@ -15,6 +15,6 @@ public interface ResourceRepository extends JpaRepository<Resource, String> {
 	 @Query("select r from Resource r where r.resourceName = ?1") 
 	 List<Resource> findByResourceName(String resourceName); 
 	 
-	 @Query("select r from Resource r,RoleResource rr,Role ro where ro.roleId = ?1 and r.resourceId=rr.resource and ro.roleId =rr.role") 
+	 @Query("select r from Resource r,RoleResource rr,Role ro where ro.roleId = ?1 and r.resourceId=rr.resourceId and ro.roleId =rr.roleId") 
 	 List<Resource> findByRoleId(String roleId); 
 }

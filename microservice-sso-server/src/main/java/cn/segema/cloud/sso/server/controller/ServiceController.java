@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.segema.cloud.common.constants.ApiConstant;
 import cn.segema.cloud.sso.server.domain.OauthClientDetails;
 import cn.segema.cloud.sso.server.repository.OauthClientDetailsRepository;
 import io.swagger.annotations.ApiImplicitParam;

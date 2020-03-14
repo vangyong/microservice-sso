@@ -6,4 +6,7 @@ public class ApiConstant {
 	
 	// API时间精度版本 毫秒:millisecond 秒：second
 	public static final String API_TIME_ACCURACY = "/millisecond";
+	
+	// SSO签名key
+    public static final String SSO_SIGNING_KEY = "segema1234567890";
 }

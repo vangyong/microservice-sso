@@ -18,21 +18,14 @@ spring:
     database: 0
     host: 127.0.0.1
     port: 6379
-    password: yeyeredisyeye
+    password: 123456
     lettuce:
       pool: 
        max-active: 100
        max-idle: 100
        min-idle: 50
        max-wait: 6000
-    timeout: 1000    
-  social: 
-    wechat:
-      app-id: [微信开放平台appId]
-      app-secret: [微信开放平台appSecret]
-    wechatmp: 
-      app-id: wx341e1ecdc00e388f
-      app-secret: 8d488da99b02d61899f76e3240328139   
+    timeout: 1000 
 
 logging:
   level:
@@ -50,3 +43,26 @@ eureka:
   client:
     serviceUrl: 
       defaultZone: http://localhost:8761/eureka/
+
+# SSO配置:      
+sso: 
+  security: 
+    oauth2:
+      storeType: jwt     
+    jwt: 
+      signingKey: segema1234567890   
+    social:
+      register-url: /social/signUp   
+      filter-processes-url: /social-login
+      bind-url: https://www.xfindzp.com/social-bind/qq
+      callback-url: https://www.xfindzp.com/social-login
+      connect-url: https://www.xfindzp.com/social-connect
+      qq:
+        app-id: 101492493
+        app-secret: 0641b26e088aa02e091672b427af2e13
+        provider-id: qq
+        register-url: https://www.xfindzp.com/login/regist
+      wechat:
+        app-id: wx14b791f941b715dc
+        app-secret: 9d2e31360b2c6dbb60dd2370d905f2c2
+        provider-id: wechat

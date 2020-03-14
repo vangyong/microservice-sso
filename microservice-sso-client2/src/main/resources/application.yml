@@ -1,15 +1,11 @@
 server:
   port: 8081
-  servlet:
-    session:
-      cookie:
-        name: SSO-CLIENT2
 spring:
   application:
     name: microservice-sso-client2
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/microservice-sso?useUnicode=true&amp;characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/microservice_sso?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: root
 logging: 
@@ -30,12 +26,12 @@ security:
   oauth2:
     client:
       client-id: client2
-      client-secret: 12345
+      client-secret: client2
       access-token-uri: http://localhost:9999/oauth/token
       user-authorization-uri: http://localhost:9999/oauth/authorize
     resource: 
-      user-info-uri: http://localhost:9999/user/me
-#      token-info-uri: http://localhost:9999/oauth/check_token # 验证token的接口
+       token-info-uri: http://localhost:9999/oauth/check_token  # 验证token的接口
+#      user-info-uri: http://localhost:9999/user/me
 #      jwt:
 #        key-uri: http://localhost:9999/oauth/token_key
 

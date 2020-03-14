@@ -10,18 +10,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 @SpringBootApplication
 @EnableEurekaClient
-//@EnableSocial
-//@Import({ WechatAutoConfiguration.class, WechatMpAutoConfiguration.class })
 public class SsoServerApplication {
   public static void main(String[] args) {
     SpringApplication.run(SsoServerApplication.class, args);
   }
   
-//	@Bean
-//	public ProviderSignInController providerSignInController(ConnectionFactoryLocator connectionFactoryLocator,
-//			UsersConnectionRepository usersConnectionRepository, WechatSignInAdapter wechatSignInAdapter) {
-//		((InMemoryUsersConnectionRepository) usersConnectionRepository)
-//				.setConnectionSignUp((Connection<?> connection) -> connection.getKey().getProviderUserId());
-//		return new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, wechatSignInAdapter);
-//	}
 }
