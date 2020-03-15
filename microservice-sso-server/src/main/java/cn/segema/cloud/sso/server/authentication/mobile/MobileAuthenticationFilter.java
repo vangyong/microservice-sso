@@ -36,7 +36,6 @@ public class MobileAuthenticationFilter extends AbstractAuthenticationProcessing
         if (mobile == null) {
             mobile = "";
         }
-
         mobile = mobile.trim();
 
         MobileAuthenticationToken authRequest = new MobileAuthenticationToken(mobile, mobileCode);

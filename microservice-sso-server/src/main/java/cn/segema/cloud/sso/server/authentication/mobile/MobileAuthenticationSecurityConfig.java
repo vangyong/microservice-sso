@@ -10,6 +10,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
 
+import cn.segema.cloud.sso.server.repository.MobileCodeRepository;
 import cn.segema.cloud.sso.server.support.MyMobileDetailsService;
 
 /**
@@ -31,6 +32,9 @@ public class MobileAuthenticationSecurityConfig extends SecurityConfigurerAdapte
 
     @Autowired
     private MyMobileDetailsService myMobileDetailsService;
+    
+    @Autowired
+    private MobileCodeRepository mobileCodeRepository;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
@@ -43,6 +47,7 @@ public class MobileAuthenticationSecurityConfig extends SecurityConfigurerAdapte
         //todo:可以往这个类里面注入验证短信验证码的service
         MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider();
         mobileAuthenticationProvider.setMyMobileDetailsService(myMobileDetailsService);
+        mobileAuthenticationProvider.setMobileCodeRepository(mobileCodeRepository);
         http.authenticationProvider(mobileAuthenticationProvider)
                 .addFilterAfter(mobileAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }

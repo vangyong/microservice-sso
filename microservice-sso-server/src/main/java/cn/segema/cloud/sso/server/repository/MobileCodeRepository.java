@@ -14,5 +14,9 @@ public interface MobileCodeRepository extends JpaRepository<MobileCode, BigInteg
 	
 	 @Query("SELECT v from MobileCode v  where v.mobileNumber = ?1 ") 
 	 public MobileCode findByMobileNumber(String mobileNumber); 
+	 
+	 
+	 @Query("SELECT v from MobileCode v  where v.mobileNumber = ?1 and  v.code = ?2") 
+     public MobileCode findByMobileNumberCode(String mobileNumber,String code); 
 	
 }

@@ -6,6 +6,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import cn.segema.cloud.sso.server.domain.MobileCode;
+import cn.segema.cloud.sso.server.repository.MobileCodeRepository;
 import cn.segema.cloud.sso.server.support.MyMobileDetailsService;
 
 // 用户认证所在类
@@ -14,10 +16,10 @@ public class MobileAuthenticationProvider implements AuthenticationProvider {
     // 注意这里的userdetailservice ，因为SmsCodeAuthenticationProvider类没有@Component
     // 所以这里不能加@Autowire，只能通过外面设置才行
     private MyMobileDetailsService myMobileDetailsService;
+    
+    private MobileCodeRepository mobileCodeRepository;
 
-    /**
-     * 在这里认证用户信息
-     */
+    //在这里认证用户信息
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         MobileAuthenticationToken authenticationToken = (MobileAuthenticationToken)authentication;
         String mobile = authentication.getName();
@@ -27,8 +29,9 @@ public class MobileAuthenticationProvider implements AuthenticationProvider {
         if (user == null) {
             throw new InternalAuthenticationServiceException("无法获取用户信息");
         }
-        //验证短信验证码，一般生产环境用redis缓存的验证码
-        if (!mobileCode.equals("690017")) {
+        //todo:验证短信验证码，一般生产环境用redis缓存的验证码
+        MobileCode mobileCodeOld = mobileCodeRepository.findByMobileNumberCode(mobile,mobileCode);
+        if(mobileCodeOld == null) {
             throw new RuntimeException("验证码不正确");
         }
 
@@ -50,4 +53,12 @@ public class MobileAuthenticationProvider implements AuthenticationProvider {
         this.myMobileDetailsService = myMobileDetailsService;
     }
 
+    public MobileCodeRepository getMobileCodeRepository() {
+        return mobileCodeRepository;
+    }
+
+    public void setMobileCodeRepository(MobileCodeRepository mobileCodeRepository) {
+        this.mobileCodeRepository = mobileCodeRepository;
+    }
+    
 }
