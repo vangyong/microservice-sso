@@ -27,12 +27,12 @@ public class MobileAuthenticationProvider implements AuthenticationProvider {
 
         UserDetails user = myMobileDetailsService.loadUserByMobileNumber(mobile);
         if (user == null) {
-            throw new InternalAuthenticationServiceException("无法获取用户信息");
+            throw new InternalAuthenticationServiceException("can't find user by mobile");
         }
         //todo:验证短信验证码，一般生产环境用redis缓存的验证码
         MobileCode mobileCodeOld = mobileCodeRepository.findByMobileNumberCode(mobile,mobileCode);
         if(mobileCodeOld == null) {
-            throw new RuntimeException("验证码不正确");
+            throw new RuntimeException("mobile code error");
         }
 
         MobileAuthenticationToken authenticationResult =
