@@ -4,12 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
+
+import cn.segema.cloud.sso.server.support.MyMobileDetailsService;
 
 /**
  * * 自定义验证密码或者验证码
@@ -20,29 +21,29 @@ import org.springframework.stereotype.Component;
  * https://cloud.tencent.com/developer/article/1040105
  */
 @Component
-public class SmsCodeAuthenticationSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
+public class MobileAuthenticationSecurityConfig extends SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity> {
 
     @Autowired
-    private AuthenticationSuccessHandler ssoAuthenticationSuccessHandler;
+    private AuthenticationSuccessHandler authenticationSuccessHandler;
 
     @Autowired
-    private AuthenticationFailureHandler ssoAuthenticationFailureHandler;
+    private AuthenticationFailureHandler authenticationFailureHandler;
 
     @Autowired
-    private UserDetailsService userDetailsService;
+    private MyMobileDetailsService myMobileDetailsService;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
 
-        SmsCodeAuthenticationFilter smsCodeAuthenticationFilter = new SmsCodeAuthenticationFilter();
-        smsCodeAuthenticationFilter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
-        smsCodeAuthenticationFilter.setAuthenticationSuccessHandler(ssoAuthenticationSuccessHandler);
-        smsCodeAuthenticationFilter.setAuthenticationFailureHandler(ssoAuthenticationFailureHandler);
+        MobileAuthenticationFilter mobileAuthenticationFilter = new MobileAuthenticationFilter();
+        mobileAuthenticationFilter.setAuthenticationManager(http.getSharedObject(AuthenticationManager.class));
+        mobileAuthenticationFilter.setAuthenticationSuccessHandler(authenticationSuccessHandler);
+        mobileAuthenticationFilter.setAuthenticationFailureHandler(authenticationFailureHandler);
 
         //todo:可以往这个类里面注入验证短信验证码的service
-        SmsCodeAuthenticationProvider smsCodeDaoAuthenticationProvider = new SmsCodeAuthenticationProvider();
-        smsCodeDaoAuthenticationProvider.setUserDetailsService(userDetailsService);
-        http.authenticationProvider(smsCodeDaoAuthenticationProvider)
-                .addFilterAfter(smsCodeAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider();
+        mobileAuthenticationProvider.setMyMobileDetailsService(myMobileDetailsService);
+        http.authenticationProvider(mobileAuthenticationProvider)
+                .addFilterAfter(mobileAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
     }
 }

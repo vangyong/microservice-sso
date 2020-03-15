@@ -22,7 +22,19 @@ http://localhost:9999/service/register
 * 见图 https://github.com/vangyong/microservice-sso/blob/master/doc/form-login1.png
 * 见图 https://github.com/vangyong/microservice-sso/blob/master/doc/form-login2.png
 
-## 接口请求
+## 手机验证码登录
+* POST http://localhost:9999/v1/sso-server/mobile/code
+* 见图 https://github.com/vangyong/microservice-sso/blob/master/doc/mobile-login1.png
+* POST http://localhost:9999/v1/sso-server/mobile/token
+* mobile:13901010101
+* mobileCode:690017
+* 在Authonrization选择Basic Auth 加入应用注册的clientId和clientSecret
+* Username:client2 
+* Password:client2
+* 见图 https://github.com/vangyong/microservice-sso/blob/master/doc/mobile-login2.png
+* 见图 https://github.com/vangyong/microservice-sso/blob/master/doc/mobile-login3.png
+
+## 业务接口请求
 请求头添加Authorization信息
 key: Authorization
 value: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIxMzkwMTAxMDEwMSIsImF1dGhvciI6Indhbmd5b25nIiwic2NvcGUiOlsiYWxsIiwicmVhZCIsIndyaXRlIl0sImNvbXBhbnkiOiJ3d3cuc2VnZW1hLmNuIiwiZXhwIjoxNTg0MTk3ODExLCJqdGkiOiIyY2YxYTU3Ny0xNjg3LTQ0OGItYjEzMi0yZmFjM2QyNjI5MjQiLCJjbGllbnRfaWQiOiJjbGllbnQyIn0.lgFkXGdEaCMigiy5r_EiPyqH_9kECDp9IG-ZDa7uVZU

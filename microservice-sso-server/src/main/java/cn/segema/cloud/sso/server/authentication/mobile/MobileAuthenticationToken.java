@@ -6,7 +6,7 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 
 // 用户基本信息存储类
-public class SmsCodeAuthenticationToken extends AbstractAuthenticationToken{
+public class MobileAuthenticationToken extends AbstractAuthenticationToken{
 
     // 用户信息全部放在这里面，如用户名，手机号，密码等
     private final Object principal;
@@ -14,7 +14,7 @@ public class SmsCodeAuthenticationToken extends AbstractAuthenticationToken{
     private Object credentials;
 
     //构造未认证之前用户信息
-    SmsCodeAuthenticationToken(Object principal, Object credentials) {
+    MobileAuthenticationToken(Object principal, Object credentials) {
         super(null);
 //        Map<String, String> map = new HashMap<String, String>();
 //        map.put("mobile",mobile);
@@ -25,7 +25,7 @@ public class SmsCodeAuthenticationToken extends AbstractAuthenticationToken{
     }
 
     //构造已认证用户信息
-    SmsCodeAuthenticationToken(Object principal,
+    MobileAuthenticationToken(Object principal,
                                Object credentials,
                                Collection<? extends GrantedAuthority> authorities) {
         super(authorities);

@@ -11,7 +11,7 @@
  Target Server Version : 50720
  File Encoding         : utf-8
 
- Date: 03/14/2020 22:57:54 PM
+ Date: 03/15/2020 18:14:35 PM
 */
 
 SET NAMES utf8mb4;
@@ -229,6 +229,27 @@ CREATE TABLE `sys_user_role` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `sys_user_role` VALUES ('1', '1', '259625530728448'), ('2', '1', '259625868635136'), ('3', '3', '272182553772032'), ('4', '1', '275020377010176'), ('5', '278450645645312', '274834606158848');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `third_mobile_code`
+-- ----------------------------
+DROP TABLE IF EXISTS `third_mobile_code`;
+CREATE TABLE `third_mobile_code` (
+  `mobile_code_id` varchar(19) COLLATE utf8_bin NOT NULL COMMENT '主键id',
+  `mobile_number` varchar(15) COLLATE utf8_bin DEFAULT NULL COMMENT '手机号',
+  `status` int(2) DEFAULT '2' COMMENT '状态(1: 已验证 2：未验证)',
+  `create_time` bigint(13) DEFAULT NULL COMMENT '创建时间',
+  `code` varchar(20) CHARACTER SET utf8mb4 DEFAULT NULL COMMENT '验证码',
+  `sms_temp_id` int(10) DEFAULT NULL COMMENT '短信模版id',
+  PRIMARY KEY (`mobile_code_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='手机验证码';
+
+-- ----------------------------
+--  Records of `third_mobile_code`
+-- ----------------------------
+BEGIN;
+INSERT INTO `third_mobile_code` VALUES ('1182647981195792384', '13901010101', '2', '1584250437797', '690017', '1001'), ('1182660259404189696', '13801010101', '0', '1570803153264', '311911', '1001');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;

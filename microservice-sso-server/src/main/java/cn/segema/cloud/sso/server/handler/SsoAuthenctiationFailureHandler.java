@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Component("ssoAuthenctiationFailureHandler")
+@Component("authenctiationFailureHandler")
 public class SsoAuthenctiationFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 
     @Autowired

@@ -12,11 +12,11 @@ public class IdGeneratorUtil {
 		return uuid;
 	}
 
-	public static synchronized long generateSnowFlakeId() {
+	public static String generateSnowFlakeId() {
 		if(snowflakeIdWorker==null) {
 			snowflakeIdWorker = new SnowflakeIdWorker(0L,0L);
 		}
-		return snowflakeIdWorker.nextId();
+		return String.valueOf(snowflakeIdWorker.nextId());
 	}
 	
 	

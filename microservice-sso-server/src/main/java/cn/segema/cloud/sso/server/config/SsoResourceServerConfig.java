@@ -9,37 +9,41 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import cn.segema.cloud.common.constants.ApiConstant;
+import cn.segema.cloud.sso.server.authentication.mobile.MobileAuthenticationSecurityConfig;
+import cn.segema.cloud.sso.server.constants.SsoConstant;
 
 @Configuration
 @EnableResourceServer
 public class SsoResourceServerConfig extends ResourceServerConfigurerAdapter {
     
     @Autowired
-    protected AuthenticationSuccessHandler ssoAuthenticationSuccessHandler;
+    protected AuthenticationSuccessHandler authenticationSuccessHandler;
 
     @Autowired
-    protected AuthenticationFailureHandler ssoAuthenticationFailureHandler;
+    protected AuthenticationFailureHandler authenticationFailureHandler;
     
-//  @Autowired
-//  private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
+    @Autowired
+    private MobileAuthenticationSecurityConfig mobileAuthenticationSecurityConfig;
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.formLogin()
         //登录页面，app用不到
-        .loginPage(ApiConstant.API_VERSION +"/sso-server/authentication/login")
+        .loginPage(SsoConstant.DEFAULT_FORM_LOGIN_PAGE_URL)
         //登录提交action，app会用到,用户名密码登录地址
-        .loginProcessingUrl(ApiConstant.API_VERSION + "/sso-server/form/token")
-        .successHandler(ssoAuthenticationSuccessHandler)
-        .failureHandler(ssoAuthenticationFailureHandler);
+        .loginProcessingUrl(SsoConstant.DEFAULT_FORM_LOGIN_PROCESSING_URL)
+        .successHandler(authenticationSuccessHandler)
+        .failureHandler(authenticationFailureHandler);
         
         
-        http//.apply(smsCodeAuthenticationSecurityConfig)
-            //.and()
+        http.apply(mobileAuthenticationSecurityConfig)
+            .and()
             .authorizeRequests()
-            .antMatchers(ApiConstant.API_VERSION + "/sso-server/register",
-                        ApiConstant.API_VERSION +"/sso-server/service/*",
-                        ApiConstant.API_VERSION + "/sso-server/form/token",
+            .antMatchers(ApiConstant.API_VERSION + "/sso-server/service/*",
+                        SsoConstant.DEFAULT_FORM_LOGIN_PAGE_URL,
+                        SsoConstant.DEFAULT_FORM_LOGIN_PROCESSING_URL,
+                        SsoConstant.DEFAULT_MOBILE_LOGIN_CODE_URL,
+                        SsoConstant.DEFAULT_MOBILE_LOGIN_PROCESSING_URL,
                         ApiConstant.API_VERSION + "/sso-server/openid/*",
                         "/oauth",
                         "/swagger-*",

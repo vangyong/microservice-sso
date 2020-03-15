@@ -25,7 +25,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Component("ssoAuthenticationSuccessHandler")
+@Component("authenticationSuccessHandler")
 public class SsoAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
     @Autowired
