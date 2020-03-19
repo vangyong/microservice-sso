@@ -31,8 +31,4 @@ public class UserVO implements Serializable {
 	@ApiModelProperty(value = "用户角色")
 	private List<RoleVO> roleList;
 
-	public UserVO(String userName, String password) {
-		this.userName = userName;
-		this.password = password;
-	}
 }

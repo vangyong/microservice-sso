@@ -36,7 +36,7 @@ public class SsoConstant {
     
     
     /**
-     * 默认短信登录请求处理url
+     * 默认openId登录请求处理url
      */
     public static final String DEFAULT_OPENID_LOGIN_PROCESSING_URL = ApiConstant.API_VERSION + "/sso-server/openid/token";
     
