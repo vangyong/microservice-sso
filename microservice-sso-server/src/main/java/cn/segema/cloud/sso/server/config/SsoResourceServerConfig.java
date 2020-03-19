@@ -51,6 +51,7 @@ public class SsoResourceServerConfig extends ResourceServerConfigurerAdapter {
                         SsoConstant.DEFAULT_MOBILE_LOGIN_PROCESSING_URL,
                         SsoConstant.DEFAULT_OPENID_LOGIN_PROCESSING_URL,
                         ApiConstant.API_VERSION + "/sso-server/oauth/*",
+                        ApiConstant.API_VERSION + "/sso-server/oauth/**",
                         "/oauth",
                         "/swagger-*",
                         "/webjars/**",

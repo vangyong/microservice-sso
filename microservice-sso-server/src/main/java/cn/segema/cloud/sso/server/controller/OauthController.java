@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSON;
 import com.xkcoding.justauth.AuthRequestFactory;
 import cn.segema.cloud.common.constants.ApiConstant;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.model.AuthCallback;
@@ -33,12 +36,16 @@ public class OauthController {
         return factory.oauthList();
     }
 
+    @ApiOperation(value = "oauth登录", notes = "oauth登录")
+    @ApiImplicitParams({@ApiImplicitParam(name = "type", value = "第三方类型", required = true, paramType = "path")})
     @GetMapping("/login/{type}")
     public void login(@PathVariable String type, HttpServletResponse response) throws IOException {
         AuthRequest authRequest = factory.get(type);
         response.sendRedirect(authRequest.authorize(AuthStateUtils.createState()));
     }
 
+    @ApiOperation(value = "回调接口", notes = "回调接口")
+    @ApiImplicitParams({@ApiImplicitParam(name = "type", value = "第三方类型", required = true, paramType = "path")})
     @RequestMapping("/{type}/callback")
     public AuthResponse login(@PathVariable String type, AuthCallback callback) {
         AuthRequest authRequest = factory.get(type);
