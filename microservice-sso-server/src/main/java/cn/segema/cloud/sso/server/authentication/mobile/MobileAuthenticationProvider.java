@@ -8,14 +8,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import cn.segema.cloud.sso.server.domain.MobileCode;
 import cn.segema.cloud.sso.server.repository.MobileCodeRepository;
-import cn.segema.cloud.sso.server.support.MyMobileDetailsService;
+import cn.segema.cloud.sso.server.support.MyMobileUserDetailsService;
 
 // 用户认证所在类
 public class MobileAuthenticationProvider implements AuthenticationProvider {
 
     // 注意这里的userdetailservice ，因为SmsCodeAuthenticationProvider类没有@Component
     // 所以这里不能加@Autowire，只能通过外面设置才行
-    private MyMobileDetailsService myMobileDetailsService;
+    private MyMobileUserDetailsService myMobileUserDetailsService;
     
     private MobileCodeRepository mobileCodeRepository;
 
@@ -25,7 +25,7 @@ public class MobileAuthenticationProvider implements AuthenticationProvider {
         String mobile = authentication.getName();
         String mobileCode = (String)authenticationToken.getCredentials();
 
-        UserDetails user = myMobileDetailsService.loadUserByMobileNumber(mobile);
+        UserDetails user = myMobileUserDetailsService.loadUserByMobileNumber(mobile);
         if (user == null) {
             throw new InternalAuthenticationServiceException("can't find user by mobile");
         }
@@ -44,13 +44,13 @@ public class MobileAuthenticationProvider implements AuthenticationProvider {
     public boolean supports(Class<?> authentication) {
         return MobileAuthenticationToken.class.isAssignableFrom(authentication);
     }
-
-    public MyMobileDetailsService getMyMobileDetailsService() {
-        return myMobileDetailsService;
+    
+    public MyMobileUserDetailsService getMyMobileUserDetailsService() {
+        return myMobileUserDetailsService;
     }
 
-    public void setMyMobileDetailsService(MyMobileDetailsService myMobileDetailsService) {
-        this.myMobileDetailsService = myMobileDetailsService;
+    public void setMyMobileUserDetailsService(MyMobileUserDetailsService myMobileUserDetailsService) {
+        this.myMobileUserDetailsService = myMobileUserDetailsService;
     }
 
     public MobileCodeRepository getMobileCodeRepository() {

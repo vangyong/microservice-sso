@@ -18,7 +18,7 @@ import cn.segema.cloud.sso.server.vo.RoleVO;
 import cn.segema.cloud.sso.server.vo.UserVO;
 
 @Service
-public class MyMobileDetailsService {
+public class MyMobileUserDetailsService {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 

@@ -65,11 +65,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-oauth2</artifactId>
 		</dependency>
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>com.auth0</groupId>
 			<artifactId>java-jwt</artifactId>
 			<version>3.4.0</version>
-		</dependency>
+		</dependency> -->
 		
 		<!-- spring-social -->
 		<!-- <dependency>

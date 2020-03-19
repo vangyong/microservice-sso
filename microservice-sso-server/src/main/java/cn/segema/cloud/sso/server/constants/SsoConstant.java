@@ -34,5 +34,21 @@ public class SsoConstant {
      */
     public static final String DEFAULT_MOBILE_CODE_PARAMETER = "mobileCode";
     
+    
+    /**
+     * 默认短信登录请求处理url
+     */
+    public static final String DEFAULT_OPENID_LOGIN_PROCESSING_URL = ApiConstant.API_VERSION + "/sso-server/openid/token";
+    
+    /**
+     * 默认第三方登录openId参数名
+     */
+    public static final String DEFAULT_OPENID_PARAMETER = "openId";
+    
+    /**
+     * 默认第三方提供商参数名
+     */
+    public static final String DEFAULT_PROVIDERID_PARAMETER = "providerId";
+    
 
 }

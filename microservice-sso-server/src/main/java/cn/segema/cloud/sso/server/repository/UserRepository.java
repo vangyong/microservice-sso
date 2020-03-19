@@ -15,6 +15,6 @@ public interface UserRepository extends JpaRepository<User, String> {
     @Query("SELECT u from User u  where u.mobileNumber = ?1 ")
     public User getUserByMobileNumber(String mobileNumber);
 
-    @Query("SELECT u from User u  where u.thirdPartyType = ?1 and u.openId = ?1 ")
+    @Query("SELECT u from User u  where u.thirdPartyType = ?1 and u.openId = ?2 ")
     public User findByOpenId(String thirdPartyType, String openId);
 }

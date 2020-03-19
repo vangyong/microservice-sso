@@ -11,7 +11,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.stereotype.Component;
 
 import cn.segema.cloud.sso.server.repository.MobileCodeRepository;
-import cn.segema.cloud.sso.server.support.MyMobileDetailsService;
+import cn.segema.cloud.sso.server.support.MyMobileUserDetailsService;
 
 /**
  * * 自定义验证密码或者验证码
@@ -31,7 +31,7 @@ public class MobileAuthenticationSecurityConfig extends SecurityConfigurerAdapte
     private AuthenticationFailureHandler authenticationFailureHandler;
 
     @Autowired
-    private MyMobileDetailsService myMobileDetailsService;
+    private MyMobileUserDetailsService myMobileUserDetailsService;
     
     @Autowired
     private MobileCodeRepository mobileCodeRepository;
@@ -46,7 +46,7 @@ public class MobileAuthenticationSecurityConfig extends SecurityConfigurerAdapte
 
         //todo:可以往这个类里面注入验证短信验证码的service
         MobileAuthenticationProvider mobileAuthenticationProvider = new MobileAuthenticationProvider();
-        mobileAuthenticationProvider.setMyMobileDetailsService(myMobileDetailsService);
+        mobileAuthenticationProvider.setMyMobileUserDetailsService(myMobileUserDetailsService);
         mobileAuthenticationProvider.setMobileCodeRepository(mobileCodeRepository);
         http.authenticationProvider(mobileAuthenticationProvider)
                 .addFilterAfter(mobileAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
