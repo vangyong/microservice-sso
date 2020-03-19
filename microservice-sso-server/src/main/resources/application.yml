@@ -51,18 +51,23 @@ sso:
       storeType: jwt     
     jwt: 
       signingKey: segema1234567890   
-    social:
-      register-url: /social/signUp   
-      filter-processes-url: /social-login
-      bind-url: https://www.xfindzp.com/social-bind/qq
-      callback-url: https://www.xfindzp.com/social-login
-      connect-url: https://www.xfindzp.com/social-connect
-      qq:
-        app-id: 101492493
-        app-secret: 0641b26e088aa02e091672b427af2e13
-        provider-id: qq
-        register-url: https://www.xfindzp.com/login/regist
-      wechat:
-        app-id: wx14b791f941b715dc
-        app-secret: 9d2e31360b2c6dbb60dd2370d905f2c2
-        provider-id: wechat
+justauth:
+  enabled: true
+  type:
+    WECHAT_MP:
+      client-id: wx40*************f63a
+      client-secret: a60d5a1**************************ea94
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat_mp/callback
+    WECHAT_ENTERPRISE:
+      client-id: ww58**********6fbc
+      client-secret: 8G6PCr0****************************yzaPc78
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat_enterprise/callback
+      agent-id: 1000002
+    DINGTALK:
+      client-id: ding*************cl3
+      client-secret: fz_NeJh9S***************************************XduEx4nyG8ZFiMD
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/dingtalk/callback
+  cache:
+    type: default
+    prefix: 'demo::'
+    timeout: 1h
