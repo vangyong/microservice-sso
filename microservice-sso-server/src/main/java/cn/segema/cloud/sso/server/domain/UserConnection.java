@@ -33,25 +33,25 @@ public class UserConnection {
     private Integer rank;
     
     @Column(name = "display_name")
-    private String display_name;
+    private String displayName;
     
     @Column(name = "profile_url")
-    private String profile_url;
+    private String profileUrl;
     
     @Column(name = "image_url")
-    private String image_url;
+    private String imageUrl;
     
     @Column(name = "access_token")
-    private String access_token;
+    private String accessToken;
     
     @Column(name = "secret")
     private String secret;
     
     @Column(name = "refresh_token")
-    private String refresh_token;
+    private String refreshToken;
     
     @Column(name = "expire_time")
-    private BigInteger expire_time;
+    private BigInteger expireTime;
 
 }
 

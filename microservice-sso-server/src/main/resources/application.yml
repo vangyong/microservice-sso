@@ -1,5 +1,5 @@
 server:
-  port: 9999
+  port: 8443
 spring: 
   application:
     name: microservice-sso-server
@@ -55,18 +55,22 @@ justauth:
   enabled: true
   type:
     WECHAT_MP:
-      client-id: wx40*************f63a
-      client-secret: a60d5a1**************************ea94
-      redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat_mp/callback
+      client-id: wx5e8bd85c8a0e3ad91
+      client-secret: 179b5b9cef5007c49d38971736d0562d1
+      redirect-uri: http://www.fengtuwei.com/v1/sso-server/oauth/callback/WECHAT_MP
     WECHAT_ENTERPRISE:
       client-id: ww58**********6fbc
       client-secret: 8G6PCr0****************************yzaPc78
-      redirect-uri: http://oauth.xkcoding.com/demo/oauth/wechat_enterprise/callback
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/callback/WECHAT_ENTERPRISE
       agent-id: 1000002
     DINGTALK:
       client-id: ding*************cl3
       client-secret: fz_NeJh9S***************************************XduEx4nyG8ZFiMD
-      redirect-uri: http://oauth.xkcoding.com/demo/oauth/dingtalk/callback
+      redirect-uri: http://oauth.xkcoding.com/demo/oauth/callback/DINGTALK
+    GITHUB:
+      client-id: 3818ca63632a5c6863831
+      client-secret: 9d4e8c206ab9426acc7a61a466503952ef30d2f21
+      redirect-uri: http://www.fengtuwei.com/v1/sso-server/oauth/callback/GITHUB  
   cache:
     type: default
     prefix: 'demo::'
