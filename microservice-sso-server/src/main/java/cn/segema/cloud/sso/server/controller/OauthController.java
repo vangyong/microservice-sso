@@ -70,8 +70,8 @@ public class OauthController {
                 userConnection.setAccessToken(String.valueOf(token.getAccessToken()));
                 userConnection.setRefreshToken(String.valueOf(token.getRefreshToken()));
                 userConnection.setExpireTime(new BigInteger(String.valueOf(token.getExpireIn())));
-                userConnection.setDisplayName(String.valueOf(authUser.getNickname()));
-                userConnection.setImageUrl(String.valueOf(authUser.getAvatar()));
+                userConnection.setNickName(String.valueOf(authUser.getNickname()));
+                userConnection.setAvatarUrl(String.valueOf(authUser.getAvatar()));
                 userConnectionRepository.save(userConnection);
             }else {
                 userConnection = new UserConnection();
@@ -81,8 +81,8 @@ public class OauthController {
                 userConnection.setAccessToken(String.valueOf(token.getAccessToken()));
                 userConnection.setRefreshToken(String.valueOf(token.getRefreshToken()));
                 userConnection.setExpireTime(new BigInteger(String.valueOf(token.getExpireIn())));
-                userConnection.setDisplayName(String.valueOf(authUser.getNickname()));
-                userConnection.setImageUrl(String.valueOf(authUser.getAvatar()));
+                userConnection.setNickName(String.valueOf(authUser.getNickname()));
+                userConnection.setAvatarUrl(String.valueOf(authUser.getAvatar()));
                 
                 User user = new User();
                 user.setUserId(IdGeneratorUtil.generateSnowFlakeId());

@@ -32,14 +32,14 @@ public class UserConnection {
     @Column(name = "rank")
     private Integer rank;
     
-    @Column(name = "display_name")
-    private String displayName;
+    @Column(name = "nick_name")
+    private String nickName;
     
     @Column(name = "profile_url")
     private String profileUrl;
     
-    @Column(name = "image_url")
-    private String imageUrl;
+    @Column(name = "avatar_url")
+    private String avatarUrl;
     
     @Column(name = "access_token")
     private String accessToken;
