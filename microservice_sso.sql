@@ -11,7 +11,7 @@
  Target Server Version : 50720
  File Encoding         : utf-8
 
- Date: 03/15/2020 18:14:35 PM
+ Date: 03/21/2020 21:39:31 PM
 */
 
 SET NAMES utf8mb4;
@@ -109,6 +109,34 @@ CREATE TABLE `oauth_refresh_token` (
   `token` blob,
   `authentication` blob
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+--  Table structure for `oauth_user_connection`
+-- ----------------------------
+DROP TABLE IF EXISTS `oauth_user_connection`;
+CREATE TABLE `oauth_user_connection` (
+  `user_connection_id` varchar(19) COLLATE utf8_bin NOT NULL COMMENT '用户关联id',
+  `user_id` varchar(19) COLLATE utf8_bin NOT NULL COMMENT '用户id',
+  `provider_id` varchar(255) COLLATE utf8_bin NOT NULL COMMENT '提供商id',
+  `open_id` varchar(255) COLLATE utf8_bin NOT NULL COMMENT '第三方用户openid',
+  `rank` int(11) NOT NULL,
+  `nick_name` varchar(255) COLLATE utf8_bin DEFAULT NULL COMMENT '昵称',
+  `profile_url` varchar(512) COLLATE utf8_bin DEFAULT NULL,
+  `avatar_url` varchar(512) COLLATE utf8_bin DEFAULT NULL COMMENT '头像URL',
+  `access_token` varchar(512) COLLATE utf8_bin NOT NULL,
+  `secret` varchar(512) COLLATE utf8_bin DEFAULT NULL,
+  `refresh_token` varchar(512) COLLATE utf8_bin DEFAULT NULL,
+  `expire_time` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`user_connection_id`),
+  UNIQUE KEY `UserConnectionRank` (`user_id`,`provider_id`,`rank`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='第三方登录关联';
+
+-- ----------------------------
+--  Records of `oauth_user_connection`
+-- ----------------------------
+BEGIN;
+INSERT INTO `oauth_user_connection` VALUES ('1', '1167080261725327360', 'WECHAT_MP', 'oq_FZt-k7i4Ug13dCUQmA0r2SNW4', '1', '王勇', null, null, '31__QwylDyUn7KjeH0N5bhO5rl7AVeDPQVljZnPZXz_ObGdJMEdy-apIQvxume13N3fTyYoLNZB27PijTXol6yO1A', null, '31_RAuO7T5_65yh8baiyeA8sjl2oGDx2UXNtZqUgxOm_SbKbflN8gPE1CWdFsnry6zRgaDnsBg59M61bqP3hcvoSQ', '7200');
+COMMIT;
 
 -- ----------------------------
 --  Table structure for `sys_resource`
@@ -249,7 +277,7 @@ CREATE TABLE `third_mobile_code` (
 --  Records of `third_mobile_code`
 -- ----------------------------
 BEGIN;
-INSERT INTO `third_mobile_code` VALUES ('1182647981195792384', '13901010101', '2', '1584250437797', '690017', '1001'), ('1182660259404189696', '13801010101', '0', '1570803153264', '311911', '1001');
+INSERT INTO `third_mobile_code` VALUES ('1182647981195792384', '13901010101', '2', '1584277302211', '588034', '1001'), ('1182660259404189696', '13801010101', '0', '1570803153264', '311911', '1001');
 COMMIT;
 
 SET FOREIGN_KEY_CHECKS = 1;
