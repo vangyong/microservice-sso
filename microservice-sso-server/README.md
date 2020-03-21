@@ -8,11 +8,11 @@ http://localhost:9999/user/me
 
 
 # 第三方登录
-http://www.fengtuwei.com/v1/sso-server/oauth/login/GITHUB
-http://www.fengtuwei.com/v1/sso-server/oauth/callback/GITHUB
+http://www.segema.cn/v1/sso-server/oauth/login/GITHUB
+http://www.segema.cn/v1/sso-server/oauth/callback/GITHUB
 
-http://www.fengtuwei.com/v1/sso-server/oauth/login/WECHAT_MP
-http://www.fengtuwei.com/v1/sso-server/oauth/callback/WECHAT_MP
+http://www.segema.cn/v1/sso-server/oauth/login/WECHAT_MP
+http://www.segema.cn/v1/sso-server/oauth/callback/WECHAT_MP
 
 # 测试接口
-http://www.fengtuwei.com/v1/sso-server/test/test1
+http://www.segema.cn/v1/sso-server/test/test1
