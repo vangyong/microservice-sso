@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 
 import cn.segema.cloud.common.utils.IdGeneratorUtil;
 import cn.segema.cloud.sso.server.domain.User;
-import cn.segema.cloud.sso.server.domain.UserConnection;
+import cn.segema.cloud.sso.server.domain.OauthUserConnection;
 import cn.segema.cloud.sso.server.repository.UserConnectionRepository;
 import cn.segema.cloud.sso.server.repository.UserRepository;
 
@@ -31,7 +31,7 @@ public class MyOpenIdUserDetailsService{
 
     public UserDetails loadUserByOpenId(String providerId,String openId) throws UsernameNotFoundException {
        
-        UserConnection userConnection = userConnectionRepository.findByOpenId(providerId,openId);
+        OauthUserConnection userConnection = userConnectionRepository.findByOpenId(providerId,openId);
         if(userConnection!=null) {
             Optional<User> userOption = userRepository.findById(userConnection.getUserId());
             if (userOption.isPresent()) {
@@ -49,7 +49,7 @@ public class MyOpenIdUserDetailsService{
         }else {
             //todo:发送请求到第三方平台验证是否登录成功
             
-            userConnection = new UserConnection();
+            userConnection = new OauthUserConnection();
             userConnection.setUserConnectionId(IdGeneratorUtil.generateSnowFlakeId());
             userConnection.setProviderId(providerId);
             userConnection.setOpenId(openId);

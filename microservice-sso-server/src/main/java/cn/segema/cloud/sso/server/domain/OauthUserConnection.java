@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 @Table(name = "oauth_user_connection")
 @Entity
-public class UserConnection {
+public class OauthUserConnection {
     
     @Id
     @Column(name = "user_connection_id")

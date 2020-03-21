@@ -17,7 +17,7 @@ import com.xkcoding.justauth.AuthRequestFactory;
 import cn.segema.cloud.common.constants.ApiConstant;
 import cn.segema.cloud.common.utils.IdGeneratorUtil;
 import cn.segema.cloud.sso.server.domain.User;
-import cn.segema.cloud.sso.server.domain.UserConnection;
+import cn.segema.cloud.sso.server.domain.OauthUserConnection;
 import cn.segema.cloud.sso.server.repository.UserConnectionRepository;
 import cn.segema.cloud.sso.server.repository.UserRepository;
 import io.swagger.annotations.ApiImplicitParam;
@@ -65,7 +65,7 @@ public class OauthController {
             String providerId = String.valueOf(authUser.getSource());
             AuthToken token = (AuthToken)authUser.getToken();
             //将信息写入本地userConnection中
-            UserConnection userConnection = userConnectionRepository.findByOpenId(providerId,String.valueOf(token.getOpenId()));
+            OauthUserConnection userConnection = userConnectionRepository.findByOpenId(providerId,String.valueOf(token.getOpenId()));
             if(userConnection!=null) {
                 userConnection.setAccessToken(String.valueOf(token.getAccessToken()));
                 userConnection.setRefreshToken(String.valueOf(token.getRefreshToken()));
@@ -74,7 +74,7 @@ public class OauthController {
                 userConnection.setAvatarUrl(String.valueOf(authUser.getAvatar()));
                 userConnectionRepository.save(userConnection);
             }else {
-                userConnection = new UserConnection();
+                userConnection = new OauthUserConnection();
                 userConnection.setUserConnectionId(IdGeneratorUtil.generateSnowFlakeId());
                 userConnection.setProviderId(providerId);
                 userConnection.setOpenId(String.valueOf(token.getOpenId()));
