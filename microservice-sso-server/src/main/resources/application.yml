@@ -55,9 +55,9 @@ justauth:
   enabled: true
   type:
     WECHAT_MP:
-      client-id: wx5e8bd85c8a0e3ad91
-      client-secret: 179b5b9cef5007c49d38971736d0562d1
-      redirect-uri: http://www.fengtuwei.com/v1/sso-server/oauth/callback/WECHAT_MP
+      client-id: wxxxid
+      client-secret: 179b5b9cef5007c*****
+      redirect-uri: http://www.xxxx.com/v1/sso-server/oauth/callback/WECHAT_MP
     WECHAT_ENTERPRISE:
       client-id: ww58**********6fbc
       client-secret: 8G6PCr0****************************yzaPc78
@@ -68,8 +68,8 @@ justauth:
       client-secret: fz_NeJh9S***************************************XduEx4nyG8ZFiMD
       redirect-uri: http://oauth.xkcoding.com/demo/oauth/callback/DINGTALK
     GITHUB:
-      client-id: 3818ca63632a5c6863831
-      client-secret: 9d4e8c206ab9426acc7a61a466503952ef30d2f21
+      client-id: 3818ca63632a5c686383
+      client-secret: 9d4e8c206ab9426acc7a61a466503952ef30d2f2
       redirect-uri: http://www.fengtuwei.com/v1/sso-server/oauth/callback/GITHUB  
   cache:
     type: default
